@@ -36,7 +36,7 @@ def photo_pred(flat_psd):
         return "Zygomycete"
     if pred_label == 2:
         return "Ascomycete or Basidiomycete"
-def main(im_name, classifier):
+def main(im_name):
     flat_psd = photo_transform(im_name)
     pred_label = photo_pred(flat_psd, classifier)
     print(pred_label)
