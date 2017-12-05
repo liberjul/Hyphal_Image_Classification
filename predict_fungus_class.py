@@ -38,7 +38,7 @@ def photo_pred(flat_psd):
         return "Ascomycete or Basidiomycete"
 def main(im_name):
     flat_psd = photo_transform(im_name)
-    pred_label = photo_pred(flat_psd, classifier)
+    pred_label = photo_pred(flat_psd)
     print(pred_label)
 if __name__ == "__main__":
     im_name = str(input("Path name of photo:"))
