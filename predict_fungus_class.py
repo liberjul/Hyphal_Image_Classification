@@ -30,12 +30,12 @@ def photo_pred(flat_psd):
     #    clf = pickle.load(open("hyphal_image_classifier.obj", 'rb'))
     #    pca_psd = pca.transform(flat_psd) # transform with the PCA
     #    pred_label = clf.predict(pca_psd) # predict with the SVM
-    clf2 = pickle.load(open("hyphal_image_RF_classifier.obj", 'rb')) # Load up-to-date Random Forest classifier
+    clf2 = pickle.load(open("hyphal_image_RF_classifier3.obj", 'rb')) # Load up-to-date Random Forest classifier
     pred_label = clf2.predict(flat_psd) # predict with the Random Forest Classifier
     if pred_label == 1: # return prediction decision
-        return "Zygomycete"
+        return "Mucormycota"
     if pred_label == 2:
-        return "Ascomycete or Basidiomycete"
+        return "Not Mucormycota"
 def main(im_name):
     flat_psd = photo_transform(im_name)
     pred_label = photo_pred(flat_psd)
